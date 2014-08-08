@@ -1,0 +1,349 @@
+  ActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.5ms)[0m  select table_name from information_schema.views where table_schema = 'myapp_test'
+  [1m[36m (65.6ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (25.1ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  select table_name from information_schema.views where table_schema = 'myapp_test'
+  [1m[36m (68.6ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"projects"=>{"description"=>"Mydesc", "prerequisites"=>"Mypr", "outcome"=>"Myotc"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-07 11:55:10', 'Mydesc', 'Myotc', 'Mypr', '2014-08-07 11:55:10')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (52.6ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 204 No Content in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (52.6ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (24.8ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `projects`
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.6ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (63.9ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (24.7ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.3ms)[0m  select table_name from information_schema.views where table_schema = 'myapp_test'
+  [1m[36m (77.2ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"projects"=>{"description"=>"Mydesc", "prerequisites"=>"Mypr", "outcome"=>"Myotc"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-07 12:04:52', 'Mydesc', 'Myotc', 'Mypr', '2014-08-07 12:04:52')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (52.5ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.8ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (54.0ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (23.4ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `projects`
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (54.0ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (48.5ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (24.8ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.5ms)[0m  select table_name from information_schema.views where table_schema = 'myapp_test'
+  [1m[36m (213.2ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.8ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"projects"=>{"description"=>"Mydesc", "prerequisites"=>"Mypr", "outcome"=>"Myotc"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-07 12:05:06', 'Mydesc', 'Myotc', 'Mypr', '2014-08-07 12:05:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (52.7ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.8ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 204 No Content in 5ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (49.4ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (24.8ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `projects`
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.8ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (51.0ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (23.5ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.2ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.5ms)[0m  select table_name from information_schema.views where table_schema = 'myapp_test'
+  [1m[36m (63.9ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (24.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"projects"=>{"description"=>"Mydesc", "prerequisites"=>"Mypr", "outcome"=>"Myotc"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-07 12:06:00', 'Mydesc', 'Myotc', 'Mypr', '2014-08-07 12:06:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.9ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (27.0ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (54.3ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (25.3ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `projects`
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (47.0ms)[0m  [1mTRUNCATE TABLE `projects`;[0m
+  [1m[35m (25.1ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `description`, `outcome`, `prerequisites`, `updated_at`) VALUES ('2014-08-06 00:00:00', 'Mydesc', 'Myotc', 'Mypre', '2014-08-06 00:00:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  `projects`.* FROM `projects`  WHERE `projects`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (49.5ms)[0m  TRUNCATE TABLE `projects`;
+  [1m[36m (23.9ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

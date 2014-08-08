@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<div ng-controller="myFormsController" >
+    <form>
+        <input type="text" name="title" ng-model="myForm.title"> Title <br/>
+        <input type="text" name="description"  ng-model="myForm.description"> Description 
+        <br/>
+        <input type="text" name="prerequisites"  ng-model="myForm.prerequisites"> Prerequisites <br/>
+        <input type="text" name="outcome" ng-model="myForm.outcome"> Outcome <br/>
+
+        <button ng-click="myForm.submitTheForm()">Submit Form</button>
+    </form>
+
+    <!-- <div>
+        {{myForm.title}} {{myForm.description}} {{myForm.prerequisites}} {{myForm.outcome}}
+    </div> -->
+</div>
+
+<script>
+    angular.module("myapp", [])
+    console.log("****** Entered into the module method *****")
+            .controller("myFormsController", function($scope) {
+                console.log("******* Entered into the controller ***")
+                $scope.myForm = {};
+                $scope.myForm.title = "Enter title here";
+                $scope.myForm.description  = "Write some description";
+                $scope.myForm.prerequisites = "Enter prerequisites";
+                $scope.myForm.outcome ="Enter outcome value"
+
+                $scope.myForm.submitTheForm = function() {
+                  console.log("**** Entered into the submitTheForm method ****")
+                  console.log("--> Submitting form");
+                  var dataObject = {
+                    title : $scope.myForm.title
+                    ,description  : $scope.myForm.description
+                    ,prerequisites : $scope.myForm.prerequisites
+                    ,outcome : $scope.myForm.outcome
+                   };
+
+                  var responsePromise = $http.post(dataObject, {});
+                  responsePromise.success(function(dataFromServer, status, headers, config) {
+                    console.log(dataFromServer.title);
+                  });
+                  responsePromise.error(function(data, status, headers, config) {
+                    alert("Submitting form failed!");
+                  });
+                }
+            });
+</script>
+
+</body>
+</html>
+
