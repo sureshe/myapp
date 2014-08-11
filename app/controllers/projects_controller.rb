@@ -4,10 +4,6 @@ class ProjectsController < ApplicationController
     render json: @project
   end
 
-  def new
-    @project = Project.new
-  end
-
   def create
     @project = Project.create!(project_params)
     render status: 200, :json => @project, :except => [:created_at, :updated_at]

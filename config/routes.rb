@@ -1,8 +1,14 @@
 Myapp::Application.routes.draw do
   # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  # root 'users#index'
+  root 'users#index'
+  resources :users
 
-  resources :projects
+  resources :projects do
+    resources :tasks
+  end
+
+  # resources :projects
+  # resources :tasks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
